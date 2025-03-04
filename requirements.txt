@@ -1,0 +1,24 @@
+#requirements.txt
+
+firecrawl-py
+pandas
+streamlit
+beautifulsoup4
+requests
+
+
+
+# service/
+# │
+# ├── api/
+# │   └── api.py
+# │
+# ├── utils/
+# │   ├── extractUrlsfromText.py
+# │   └── extractUrlsfromHtml.py
+# │
+# ├── venv/
+# │
+# ├── app.py
+# ├── requirements.txt
+# └── README.md
