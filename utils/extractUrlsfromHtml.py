@@ -2,9 +2,10 @@
 
 from bs4 import BeautifulSoup
 import json
-
-from bs4 import BeautifulSoup
+from .extractUrlsfromText import SUPPORTED_DOMAINS
+from distributorscripts.tme import fix_tme_urls
 import re
+
 
 def matches_search_criteria(url, search_list):
     """
@@ -26,14 +27,12 @@ def matches_search_criteria(url, search_list):
             return True
     return False
 
-def extract_urls_from_html(raw_html, search_list=None):
+def extract_urls_from_html(raw_html, domain, search_list=None):
     """
     Extracts unique URLs from raw HTML content that match the search criteria.
-    
     Args:
         raw_html (str): The raw HTML string.
         search_list (list, optional): List of search terms to filter URLs.
-        
     Returns:
         list: A list of unique URLs extracted from the HTML that match the search criteria.
     """
@@ -43,10 +42,19 @@ def extract_urls_from_html(raw_html, search_list=None):
     
     # Filter URLs based on search criteria
     #filtered_urls = [url for url in all_urls if matches_search_criteria(url, search_list)]
+    if domain == "tme":
+        all_urls= fix_tme_urls(all_urls)
     
     # Remove duplicates
     unique_urls = list(set(all_urls))
+    
     return unique_urls
+
+
+
+
+
+
 
 # Example usage:
 # user_input = st.sidebar.text_input(
