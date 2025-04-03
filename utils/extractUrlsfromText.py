@@ -7,7 +7,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-SUPPORTED_DOMAINS = {"www.iewc.com","www.tme.com"}  # Example supported domains, can be expanded
+SUPPORTED_DOMAINS = {"www.iewc.com","www.tme.com","www.masterelectronics.com"}  # Example supported domains, can be expanded
 
 def extract_urls(file_content: str):
     """

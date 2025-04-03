@@ -83,7 +83,7 @@ def param_changed():
 st.sidebar.header("Configurations")
 
 # Sidebar inputs
-Domain = st.sidebar.selectbox("Distributor:", options=["iewc","tme"], index=0,on_change=param_changed)
+Domain = st.sidebar.selectbox("Distributor:", options=["iewc","tme","masterElectronics"], index=0,on_change=param_changed)
 format_option = st.sidebar.selectbox("Extraction Format:", options=["rawHtml"], index=0,on_change=param_changed)
 wait_time = st.sidebar.slider("Wait Time (ms):", min_value=2000, max_value=25000, value=10000, step=500,on_change=param_changed)
 st.sidebar.header("API Key Input")
